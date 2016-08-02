@@ -1,0 +1,6 @@
+HOSTS=(pfsense pfsense2)
+DIRECTORY="{GIT_PATH}/pfsense_backups"
+REPO="git@git-hostname:pfsense_backup.git"
+ADMINEMAIL="admin@host.com"
+PFUSER="backup_user"
+PFPASSWD=""

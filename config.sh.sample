@@ -1,4 +1,5 @@
 HOSTS=(pfsense pfsense2)
+HTTPACCESS="https" # or http for non-ssl
 DIRECTORY="{GIT_PATH}/pfsense_backups"
 REPO="git@git-hostname:pfsense_backup.git"
 ADMINEMAIL="admin@host.com"

@@ -2,6 +2,14 @@ HOSTS=(pfsense pfsense2)
 HTTPACCESS="https" # or http for non-ssl
 DIRECTORY="{GIT_PATH}/pfsense_backups"
 REPO="git@git-hostname:pfsense_backup.git"
+
+# Email reports sent to.  If empty, email is disabled.
 ADMINEMAIL="admin@host.com"
+
+# pfsense access
 PFUSER="backup_user"
 PFPASSWD=""
+
+# Support for encrypted git repo
+SALT_FIXED=<your-salt> # 24 or less hex characters
+PASS_FIXED=<your-passphrase>

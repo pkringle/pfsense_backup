@@ -23,6 +23,9 @@ if [ ! -f "$DIRECTORY/.gitattributes" ]; then
 	echo "* filter=openssl diff=openssl" > $DIRECTORY/.gitattributes
 	echo "[merge]" >> $DIRECTORY/.gitattributes
 	echo "    renormalize = true" >> $DIRECTORY/.gitattributes
+	git add .gitattributes
+	git commit -m "Adding gitattributes"
+	git push origin master
 
 	echo "[filter \"openssl\"]" >> $DIRECTORY/.git/config
 	echo "    smudge = $HOMEDIR/smudge_filter_openssl " >> $DIRECTORY/.git/config

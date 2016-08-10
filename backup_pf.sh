@@ -52,8 +52,10 @@ wget -qO --keep-session-cookies --load-cookies cookies.txt --no-check-certificat
 git add ${HOSTNAME}_config.xml &> /dev/null
 if [ `git diff-index --name-only HEAD | wc -l` -gt 0 ];
 then
-	git diff --cached | /tmp/ansi2html.sh > $DIRECTORY/filediff.txt 2>&1
-	cat $DIRECTORY/filediff.txt | mail -s "$(echo -e "Config change found on $HOSTNAME\nContent-Type: text/html")" $ADMINEMAIL
+	if [ $ADMINEMAIL != "" ]; then
+		git diff --cached | /tmp/ansi2html.sh > $DIRECTORY/filediff.txt 2>&1
+		cat $DIRECTORY/filediff.txt | mail -s "$(echo -e "Config change found on $HOSTNAME\nContent-Type: text/html")" $ADMINEMAIL
+	fi
 	git commit -m "Config change found on $HOSTNAME" &> /dev/null
 	git push origin master &> /dev/null
 	rm $DIRECTORY/filediff.txt

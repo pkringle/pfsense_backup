@@ -28,7 +28,7 @@ if [ ! -f "$DIRECTORY/.gitattributes" ]; then
 	echo "    smudge = $HOMEDIR/smudge_filter_openssl " >> $DIRECTORY/.git/config
 	echo "    clean = $HOMEDIR/clean_filter_openssl" >> $DIRECTORY/.git/config
 	echo "[diff \"openssl\"]" >> $DIRECTORY/.git/config
-	echo "    textconv = $HOMEDIRdiff_filter_openssl" >> $DIRECTORY/.git/config
+	echo "    textconv = $HOMEDIR/diff_filter_openssl" >> $DIRECTORY/.git/config
 fi
 
 git pull $REPO master &> /dev/null

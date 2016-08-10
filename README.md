@@ -18,3 +18,4 @@ A shell script to monitor pfsense firewall changes and commit changes to a backu
 ## Credits
 - https://gist.github.com/shadowhand/873637
 - https://doc.pfsense.org/index.php/Remote_Config_Backup
+- http://www.pixelbeat.org/cv.html
